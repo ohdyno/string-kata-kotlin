@@ -12,10 +12,18 @@ class CalculatorTests {
         assertEquals(1, Calculator().add("1"))
         assertEquals(10, Calculator().add("10"))
     }
+
+    @Test
+    internal fun `adding two numbers separated by commas returns the sum`() {
+        assertEquals(1, Calculator().add("0,1"))
+        assertEquals(1001, Calculator().add("1000,1"))
+    }
 }
 
 class Calculator {
     fun add(numbers: String): Int {
-        return if (numbers.isBlank()) 0 else numbers.toInt()
+        if (numbers.isBlank()) return 0
+        if (numbers.contains(",")) return numbers.split(",").map { n -> n.toInt() }.sum()
+        return numbers.toInt()
     }
 }
