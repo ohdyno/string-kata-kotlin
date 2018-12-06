@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/string-calculator-kata.iml" filepath="$PROJECT_DIR$/string-calculator-kata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/string-calculator-kotlin.iml" filepath="$PROJECT_DIR$/string-calculator-kotlin.iml" />
     </modules>
   </component>
 </project>
