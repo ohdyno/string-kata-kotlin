@@ -23,7 +23,6 @@ class CalculatorTests {
 class Calculator {
     fun add(numbers: String): Int {
         if (numbers.isBlank()) return 0
-        if (numbers.contains(",")) return numbers.split(",").map { n -> n.toInt() }.sum()
-        return numbers.toInt()
+        return numbers.split(",").map { n -> n.toInt() }.sum()
     }
 }
