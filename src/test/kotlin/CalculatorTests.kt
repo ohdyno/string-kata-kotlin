@@ -22,7 +22,10 @@ class CalculatorTests {
 
 class Calculator {
     fun add(numbers: String): Int {
-        if (numbers.isBlank()) return 0
-        return numbers.split(",").map { n -> n.toInt() }.sum()
+        return numbers
+            .split(",")
+            .filterNot(String::isBlank)
+            .map(String::toInt)
+            .sum()
     }
 }
