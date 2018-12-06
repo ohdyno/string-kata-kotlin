@@ -16,8 +16,6 @@ class CalculatorTests {
 
 class Calculator {
     fun add(numbers: String): Int {
-        if (numbers.isBlank())
-            return 0
-        return numbers.toInt()
+        return if (numbers.isBlank()) 0 else numbers.toInt()
     }
 }
