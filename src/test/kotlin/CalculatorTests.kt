@@ -3,11 +3,21 @@ import kotlin.test.assertEquals
 
 class CalculatorTests {
     @Test
-    fun `adding empty string returns 0`() {
+    internal fun `adding empty string returns 0`() {
         assertEquals(0, Calculator().add(""))
+    }
+
+    @Test
+    internal fun `adding one number returns that number`() {
+        assertEquals(1, Calculator().add("1"))
+        assertEquals(10, Calculator().add("10"))
     }
 }
 
 class Calculator {
-    fun add(numbers: String): Int = 0
+    fun add(numbers: String): Int {
+        if (numbers.isBlank())
+            return 0
+        return numbers.toInt()
+    }
 }
